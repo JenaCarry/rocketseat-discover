@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url("assets/bg-mobile.jpg");
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url("assets/moon-stars.svg");
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url("assets/bg-mobile-light.jpg");
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url("assets/sun.svg");
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 100%;
+  max-width: 360px;
+  padding: 0 1.5rem;
+  margin: 3.5rem auto 2rem auto;
+}
+
+#profile {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+#profile img {
+  width: 112px;
+  height: auto;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+#switch {
+  width: 4rem;
+  position: relative;
+  margin: 0.25rem auto;
+  cursor: pointer;
+}
+
+#switch button {
+  width: 2rem;
+  height: 2rem;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.light #switch button {
+  left: initial;
+  right: 0;
+}
+
+#switch span {
+  display: block;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+ul {
+  list-style: none;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.2s;
+}
+
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+#social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+#social-links a:hover {
+  background-color: var(--highlight-color);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding: 1.5rem 0;
+}
